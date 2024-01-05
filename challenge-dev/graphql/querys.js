@@ -6,8 +6,7 @@ query GetAllCharacters {
     results {
       id
       name
-      status
-      gender
+      image
     }
   }
 }
