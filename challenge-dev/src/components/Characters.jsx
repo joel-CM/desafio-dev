@@ -11,7 +11,7 @@ export default function Characters() {
     return (
         <div className="row">
             {data.characters.results.map((character) => (
-                <Character character={character} />
+                <Character key={character.id} character={character} />
             ))}
         </div>
     )
