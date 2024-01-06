@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import FilterByStatus from "./FilterByStatus";
 import FilterBySpecie from "./FilterBySpecie";
+import FilterByGender from "./FilterByGender";
 
 export default function Filterbar() {
     return (
@@ -14,12 +15,7 @@ export default function Filterbar() {
                 <FilterBySpecie />
             </Col>
             <Col xs={12} sm={4}>
-                <Form.Select aria-label="Default select example">
-                    <option>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </Form.Select>
+                <FilterByGender />
             </Col>
         </Row>
     )
