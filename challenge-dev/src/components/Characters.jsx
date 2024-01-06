@@ -1,18 +1,27 @@
+import { useEffect, useContext } from "react";
+import CharacterContext from "../context/character/characterContext"
 import Character from "./Character";
-import { useQuery } from "@apollo/client";
-import { GET_ALL_CHARACTERS } from "../../graphql/querys"
+import { getAllCharacters } from "../context/character/actions"
 
 export default function Characters() {
-    const { data, loading, error } = useQuery(GET_ALL_CHARACTERS);
+    const { state, dispatch } = useContext(CharacterContext);
 
-    if (error) return <p>{error}</p>
-    if (loading) return <p>LOADING...</p>
+    useEffect(() => {
+        (async () => {
+            getAllCharacters(dispatch);
+        })();
+    }, [])
+
+    if (state.loadingCharacters) return <p>LOADING...</p>
 
     return (
         <div className="row">
-            {data.characters.results.map((character) => (
-                <Character key={character.id} character={character} />
-            ))}
+            <h1>characters</h1>
+            {
+                state.characters.map((character) => (
+                    <Character key={character.id} character={character} />
+                ))
+            }
         </div>
     )
 }
