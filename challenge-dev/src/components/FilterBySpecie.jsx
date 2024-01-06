@@ -10,7 +10,7 @@ export default function FilterBySpecie() {
 
     const handleFilter = (e) => {
         const specie = e.target.value;
-        if (specie !== "none") {
+        if (specie !== "") {
             const data = { variables: { ...state.filters, specie } }
             filterCharacters(dispatch, data)
         }
@@ -25,8 +25,8 @@ export default function FilterBySpecie() {
     }, [])
 
     return (
-        <Form.Select onChange={(e) => handleFilter(e)} aria-label="Default select example">
-            <option value="none">Specie</option>
+        <Form.Select value={state.filters.specie} onChange={(e) => handleFilter(e)} aria-label="Default select example">
+            <option value="">Specie</option>
             {localState.map((specie) => (
                 <option key={specie} value={specie}>{specie}</option>
             ))}

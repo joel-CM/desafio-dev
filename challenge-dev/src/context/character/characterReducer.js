@@ -19,6 +19,11 @@ export default (state, action) => {
                 ...state,
                 characters: payload
             }
+        case types.SET_SEARCH_BY_NAME:
+            return {
+                ...state,
+                searchByName: payload
+            }
         case types.SET_NEW_FILTERS_TYPE:
             return {
                 ...state,
@@ -30,6 +35,11 @@ export default (state, action) => {
             return {
                 ...state,
                 characters: payload
+            }
+        case types.RESET_ALL_FILTERS_TYPE:
+            return {
+                ...state,
+                ...payload
             }
         default:
             return state;

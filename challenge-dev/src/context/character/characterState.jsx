@@ -5,6 +5,7 @@ import CharacterContext from "./characterContext";
 function CharacterStateProvider({ children }) {
     const initialState = {
         characters: [],
+        searchByName: "",
         loadingCharacters: false,
         filters: {
             status: "",

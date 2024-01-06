@@ -8,15 +8,15 @@ export default function FilterByStatus() {
 
     const handleFilter = (e) => {
         const status = e.target.value;
-        if (status !== "none") {
+        if (status !== "") {
             const data = { variables: { ...state.filters, status } }
             filterCharacters(dispatch, data)
         }
     }
 
     return (
-        <Form.Select onChange={(e) => handleFilter(e)} aria-label="Default select example">
-            <option value="none">Status</option>
+        <Form.Select value={state.filters.status} onChange={(e) => handleFilter(e)} aria-label="Default select example">
+            <option value="">Status...</option>
             <option value="Alive">Alive</option>
             <option value="Dead">Dead</option>
             <option value="unknown">unknown</option>

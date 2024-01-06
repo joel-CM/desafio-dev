@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { getCharacterByName } from "../context/character/actions";
 
 export default function Searchbar() {
-    const { dispatch } = useContext(CharacterContext);
+    const { state, dispatch } = useContext(CharacterContext);
 
     const handleInput = async (e) => {
         const search = e.target.value;
@@ -14,7 +14,7 @@ export default function Searchbar() {
 
     return (
         <Form>
-            <Form.Control onChange={(e) => handleInput(e)} placeholder="Search..." />
+            <Form.Control value={state.searchByName} onChange={(e) => handleInput(e)} placeholder="Search..." />
         </Form>
     )
 }

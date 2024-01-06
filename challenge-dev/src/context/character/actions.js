@@ -29,6 +29,12 @@ export const getAllCharacters = async (dispatch) => {
 
 
 export const getCharacterByName = async (dispatch, data) => {
+    // set the searched character in the context
+    dispatch({
+        type: types.SET_SEARCH_BY_NAME,
+        payload: data.variables.name
+    })
+
     const { data: d } = await client.query({
         query: querys.GET_CHARACTER_BY_NAME_QUERY,
         variables: data.variables
@@ -70,4 +76,22 @@ export const filterCharacters = async (dispatch, data) => {
         type: types.SET_LOADING_CHARACTERS_TYPE,
         payload: false
     })
+}
+
+export const resetAllFilters = async (dispatch) => {
+    // set to none all filters
+    dispatch({
+        type: types.RESET_ALL_FILTERS_TYPE,
+        payload: {
+            searchByName: "",
+            filters: {
+                status: "",
+                specie: "",
+                gender: ""
+            }
+        }
+    })
+
+    // get all characters
+    await getAllCharacters(dispatch)
 }
