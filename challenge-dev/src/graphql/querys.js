@@ -12,7 +12,7 @@ query GetAllCharacters {
 }
 `;
 
-export const GET_CHARACTER_BY_NAME = gql`
+export const GET_CHARACTER_BY_NAME_QUERY = gql`
 query getCharacterByName($name: String!) {
   characters(filter: {name: $name}) {
     results {
@@ -22,4 +22,16 @@ query getCharacterByName($name: String!) {
     }
   }
 }
-`
+`;
+
+export const FILTER_CHARACTERS_BY_STATUS_QUERY = gql`
+query filterCharactersByStatus($status: String!){
+  characters(filter: {status: $status}){
+    results{
+      id
+      name
+      image
+    }
+  }
+}
+`;

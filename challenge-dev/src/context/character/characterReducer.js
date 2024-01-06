@@ -19,6 +19,19 @@ export default (state, action) => {
                 ...state,
                 characters: payload
             }
+        case types.SET_STATUS_FILTER_TYPE:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    status: payload
+                }
+            }
+        case types.FILTER_CHARACTERS_BY_STATUS_TYPE:
+            return {
+                ...state,
+                characters: payload
+            }
         default:
             return state;
     }

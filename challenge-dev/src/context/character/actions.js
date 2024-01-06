@@ -30,12 +30,44 @@ export const getAllCharacters = async (dispatch) => {
 
 export const getCharacterByName = async (dispatch, data) => {
     const { data: d } = await client.query({
-        query: querys.GET_CHARACTER_BY_NAME,
+        query: querys.GET_CHARACTER_BY_NAME_QUERY,
         variables: data.variables
     })
 
     dispatch({
         type: types.GET_CHARACTERS_BY_NAME_TYPE,
         payload: d.characters.results
+    })
+}
+
+export const filterCharactersByStatus = async (dispatch, data) => {
+    // set loadingCharacters to true
+    dispatch({
+        type: types.SET_LOADING_CHARACTERS_TYPE,
+        payload: true
+    })
+
+    // set new character status filter
+    dispatch({
+        type: types.SET_STATUS_FILTER_TYPE,
+        payload: data.variables.status
+    })
+
+    // fetch data
+    const { data: d } = await client.query({
+        query: querys.FILTER_CHARACTERS_BY_STATUS_QUERY,
+        variables: data.variables
+    })
+
+    // set filtered characters to context
+    dispatch({
+        type: types.FILTER_CHARACTERS_BY_STATUS_TYPE,
+        payload: d.characters.results
+    })
+
+    // set loadingCharacters to false
+    dispatch({
+        type: types.SET_LOADING_CHARACTERS_TYPE,
+        payload: false
     })
 }

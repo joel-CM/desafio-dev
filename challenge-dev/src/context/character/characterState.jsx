@@ -5,7 +5,13 @@ import CharacterContext from "./characterContext";
 function CharacterStateProvider({ children }) {
     const initialState = {
         characters: [],
-        loadingCharacters: false
+        loadingCharacters: false,
+        filters: {
+            status: "",
+            specie: "",
+            gender: ""
+
+        }
     }
 
     const [state, dispatch] = useReducer(characterReducer, initialState);
