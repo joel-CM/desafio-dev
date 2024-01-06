@@ -1,8 +1,7 @@
 import Form from "react-bootstrap/Form"
 import { useContext } from "react";
 import CharacterContext from "../context/character/characterContext"
-import { filterCharactersByStatus } from "../context/character/actions"
-import { FILTER_CHARACTERS_BY_STATUS_TYPE } from "../context/types"
+import { filterCharacters } from "../context/character/actions"
 
 export default function FilterByStatus() {
     const { state, dispatch } = useContext(CharacterContext);
@@ -10,8 +9,8 @@ export default function FilterByStatus() {
     const handleFilter = (e) => {
         const status = e.target.value;
         if (status !== "none") {
-            const data = { variables: { status } }
-            filterCharactersByStatus(dispatch, data)
+            const data = { variables: { ...state.filters, status } }
+            filterCharacters(dispatch, data)
         }
     }
 

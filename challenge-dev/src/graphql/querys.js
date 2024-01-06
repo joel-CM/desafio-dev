@@ -24,14 +24,34 @@ query getCharacterByName($name: String!) {
 }
 `;
 
-export const FILTER_CHARACTERS_BY_STATUS_QUERY = gql`
-query filterCharactersByStatus($status: String!){
-  characters(filter: {status: $status}){
+export const FILTER_CHARACTERS_QUERY = gql`
+query filterCharactes($status: String, $specie: String, $gender: String){
+  characters(filter: {status: $status, species: $specie, gender: $gender}){
     results{
       id
       name
       image
     }
   }
-}
-`;
+}`;
+
+export const GET_SPECIES_QUERY = gql`
+query getSpecies($page: Int) {
+  characters(page: $page) {
+    results {
+      species
+    }
+  }
+}`;
+
+export const GET_PAGES_QUERY = gql`
+query getPages{
+  characters{
+    info{
+      pages,
+    }
+    results {
+      id
+    }
+  }
+}`;
