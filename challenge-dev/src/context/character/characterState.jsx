@@ -7,6 +7,7 @@ function CharacterStateProvider({ children }) {
         characters: [],
         searchByName: "",
         loadingCharacters: false,
+        selectedCharacter: {},
         filters: {
             status: "",
             specie: "",

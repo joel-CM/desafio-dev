@@ -12,6 +12,24 @@ query GetAllCharacters {
 }
 `;
 
+export const GET_DETAIL_CHARACTER = gql`
+query getDetailCharacter($ids: [ID!]!) {
+  charactersByIds(ids: $ids) {
+    name
+    image
+    status
+    gender
+    species
+    type
+    location {
+      name
+    }
+    origin {
+      name
+    }
+  }
+}`;
+
 export const GET_CHARACTER_BY_NAME_QUERY = gql`
 query getCharacterByName($name: String!) {
   characters(filter: {name: $name}) {

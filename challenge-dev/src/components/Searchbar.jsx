@@ -13,7 +13,7 @@ export default function Searchbar() {
     }
 
     return (
-        <Form>
+        <Form onSubmit={(e) => e.preventDefault()}>
             <Form.Control value={state.searchByName} onChange={(e) => handleInput(e)} placeholder="Search..." />
         </Form>
     )

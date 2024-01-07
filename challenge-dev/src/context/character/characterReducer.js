@@ -41,6 +41,16 @@ export default (state, action) => {
                 ...state,
                 ...payload
             }
+        case types.SET_SELECTED_CHARACTER_TYPE:
+            return {
+                ...state,
+                selectedCharacter: payload
+            }
+        case types.CLEAR_SELECTED_CHARACTER:
+            return {
+                ...state,
+                selectedCharacter: payload
+            }
         default:
             return state;
     }

@@ -95,3 +95,19 @@ export const resetAllFilters = async (dispatch) => {
     // get all characters
     await getAllCharacters(dispatch)
 }
+
+export const setSelectedCharacter = async (dispatch, data) => {
+    // fetch selected character
+    const { data: d } = await client.query({
+        query: querys.GET_DETAIL_CHARACTER,
+        variables: data.variables
+    })
+
+    const selectedCharacter = d.charactersByIds[0];
+
+    // set selected character
+    dispatch({
+        type: types.SET_SELECTED_CHARACTER_TYPE,
+        payload: selectedCharacter
+    })
+}
