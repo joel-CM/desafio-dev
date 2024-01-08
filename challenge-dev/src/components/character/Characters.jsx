@@ -14,7 +14,12 @@ export default function Characters() {
         })();
     }, [])
 
-    if (state.loadingCharacters) return <p>LOADING...</p>
+    if (state.loadingCharacters) {
+        return <h4 className="my-5 text-center">LOADING...</h4>
+    }
+    if (state.loadingCharacters === false && state.characters.length === 0) {
+        return <h4 className="my-6 text-center">NO RESULTS...</h4>
+    }
 
     return (
         <Row>
