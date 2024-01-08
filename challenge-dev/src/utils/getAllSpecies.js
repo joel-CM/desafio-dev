@@ -1,6 +1,13 @@
 import client from "../graphql/config"
 import { GET_SPECIES_QUERY, GET_PAGES_QUERY } from "../graphql/querys"
 
+
+/*
+Al aplicar filtros por species, la api de rick and morty no cuenta
+con una query para obtener todos los tipos de species. Una solucion
+para este problem fue obtener las species de todos los characters y crear
+una lista de ellos.
+*/
 export const getAllSpecies = async () => {
     // use a set to skip duplicated species
     const species = new Set();
