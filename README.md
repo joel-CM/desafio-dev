@@ -1,7 +1,17 @@
 # Desafío para Dev
 
-Nombre postulante: [TU NOMBRE]
-Link a la app en producción: [LINK DEL DEPLOY]
+## Comentarios
+- Al aplicar filtros por especies, la API de Rick and Morty no cuenta
+con una consulta para obtener todos los tipos de especies. Mi solución
+para este problema fue obtener las especies de todos los personajes y crear
+una lista de ellas.
+
+- Manejo toda la comunicación de los componentes con dos contextos de React (characters y modal). El contexto de characters envuelve toda la aplicación, mientras que el contexto del modal solo envuelve a los componentes que renderizan los characters y al componente que renderiza el modal de detalle. Ya que es el componente de character quien captura la acción del usuario cuando este quiere ver el detalle de un personaje, cambiando el estado del contexto del modal, haciendo que el componente del modal se renderice.
+
+---
+
+Nombre postulante: Joel Chavez.
+Link a la app en producción: https://joelcm-desafio-dev.vercel.app
 
 ## Instrucciones
 
