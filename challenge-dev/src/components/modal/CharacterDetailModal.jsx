@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import ModalContext from "../context/modal/modalContext";
-import CharacterContext from "../context/character/characterContext"
-import { setHideDetailModal } from "../context/modal/actions";
+import ModalContext from "../../context/modal/modalContext";
+import CharacterContext from "../../context/character/characterContext"
+import { setHideDetailModal } from "../../context/modal/actions";
 import Modal from 'react-bootstrap/Modal';
 import Image from "react-bootstrap/Image"
 
@@ -19,7 +19,7 @@ export default function CharacterDetailModal() {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    {characterState.selectedCharacter?.name}
+                    {characterState.selectedCharacter.name}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>

@@ -1,8 +1,8 @@
 import Form from "react-bootstrap/Form"
 import { useContext, useEffect, useState } from "react";
-import CharacterContext from "../context/character/characterContext"
-import { filterCharacters } from "../context/character/actions"
-import { getAllSpecies } from "../utils/getAllSpecies"
+import CharacterContext from "../../context/character/characterContext"
+import { filterCharacters } from "../../context/character/actions"
+import { getAllSpecies } from "../../utils/getAllSpecies"
 
 export default function FilterBySpecie() {
     const [localState, setLocalState] = useState([])

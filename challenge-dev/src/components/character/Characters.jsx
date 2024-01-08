@@ -1,8 +1,7 @@
 import { useEffect, useContext } from "react";
-import CharacterContext from "../context/character/characterContext"
+import CharacterContext from "../../context/character/characterContext"
 import Character from "./Character";
-import { getAllCharacters } from "../context/character/actions"
-import CharacterDetailModal from "./CharacterDetailModal"
+import { getAllCharacters } from "../../context/character/actions"
 import Row from "react-bootstrap/Row"
 
 export default function Characters() {
@@ -24,7 +23,6 @@ export default function Characters() {
                     <Character key={character.id} character={character} />
                 ))
             }
-            <CharacterDetailModal />
         </Row>
     )
 }

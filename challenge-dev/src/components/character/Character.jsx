@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import CharacterContext from "../context/character/characterContext";
-import ModalContext from "../context/modal/modalContext"
+import CharacterContext from "../../context/character/characterContext";
+import ModalContext from "../../context/modal/modalContext"
 import Card from "react-bootstrap/Card";
-import { setSelectedCharacter } from "../context/character/actions";
-import { setShowDetailModal } from "../context/modal/actions"
+import { setSelectedCharacter } from "../../context/character/actions";
+import { setShowDetailModal } from "../../context/modal/actions"
 
 export default function Character({ character }) {
     const { dispatch: characterDispatch } = useContext(CharacterContext);

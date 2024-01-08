@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form"
 import { useContext } from "react";
-import CharacterContext from "../context/character/characterContext"
-import { filterCharacters } from "../context/character/actions"
+import CharacterContext from "../../context/character/characterContext"
+import { filterCharacters } from "../../context/character/actions"
 
 export default function FilterByStatus() {
     const { state, dispatch } = useContext(CharacterContext);

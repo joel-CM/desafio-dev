@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import Filterbar from "./Filterbar";
+import Navbar from "./navbar/Navbar";
+import Filterbar from "./filter/Filterbar";
 
 export default function Header() {
     return (

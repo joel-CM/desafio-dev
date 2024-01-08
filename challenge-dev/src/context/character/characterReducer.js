@@ -1,4 +1,4 @@
-import * as types from "../types";
+import * as types from "./types";
 
 export default (state, action) => {
     const { type, payload } = action;
@@ -19,16 +19,6 @@ export default (state, action) => {
                 ...state,
                 loadingCharacters: payload
             }
-        case types.GET_CHARACTERS_BY_NAME_TYPE:
-            return {
-                ...state,
-                characters: payload
-            }
-        case types.SET_SEARCH_BY_NAME:
-            return {
-                ...state,
-                searchByName: payload
-            }
         case types.SET_NEW_FILTERS_TYPE:
             return {
                 ...state,
@@ -47,11 +37,6 @@ export default (state, action) => {
                 ...payload
             }
         case types.SET_SELECTED_CHARACTER_TYPE:
-            return {
-                ...state,
-                selectedCharacter: payload
-            }
-        case types.CLEAR_SELECTED_CHARACTER:
             return {
                 ...state,
                 selectedCharacter: payload

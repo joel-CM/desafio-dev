@@ -13,7 +13,7 @@ export default function Pagination() {
     }
 
     return (
-        <div className="mt-3">
+        <div className="d-flex justify-content-center mt-3">
             <PaginationControl
                 page={state.filters.page}
                 between={3}

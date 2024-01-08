@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import CharacterContext from "../context/character/characterContext";
+import CharacterContext from "../../context/character/characterContext";
 import Form from 'react-bootstrap/Form';
-import { filterCharacters } from "../context/character/actions";
+import { filterCharacters } from "../../context/character/actions";
 
 export default function Searchbar() {
     const { state, dispatch } = useContext(CharacterContext);

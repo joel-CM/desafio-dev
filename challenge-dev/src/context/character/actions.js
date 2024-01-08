@@ -1,6 +1,6 @@
 import client from "../../graphql/config"
 import * as querys from "../../graphql/querys"
-import * as types from "../types"
+import * as types from "./types"
 
 export const getAllCharacters = async (dispatch) => {
     // set loadingCharacters to true
