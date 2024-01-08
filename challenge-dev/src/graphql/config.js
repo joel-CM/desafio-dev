@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 
-const api = new HttpLink({ uri: "https://rickandmortyapi.com/graphql" })
+const api = new HttpLink({ uri: import.meta.env.VITE_RICK_AND_MORTY_URL })
 
 const client = new ApolloClient({
     connectToDevTools: true,
