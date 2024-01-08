@@ -9,6 +9,11 @@ export default (state, action) => {
                 ...state,
                 characters: payload
             }
+        case types.SET_TOTAL_PAGES:
+            return {
+                ...state,
+                totalPages: payload
+            }
         case types.SET_LOADING_CHARACTERS_TYPE:
             return {
                 ...state,

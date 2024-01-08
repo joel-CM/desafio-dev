@@ -9,7 +9,7 @@ export default function FilterByStatus() {
     const handleFilter = (e) => {
         const status = e.target.value;
         if (status !== "") {
-            const data = { variables: { ...state.filters, status } }
+            const data = { variables: { ...state.filters, status, page: 1 } }
             filterCharacters(dispatch, data)
         }
     }

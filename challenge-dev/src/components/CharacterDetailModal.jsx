@@ -23,8 +23,8 @@ export default function CharacterDetailModal() {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <div className="row">
-                    <div className="col-12 col-sm-auto mb-sm-2">
+                <div className="row justify-content-center">
+                    <div className="col-12 col-sm-auto">
                         <Image src={characterState.selectedCharacter.image} rounded />
                     </div>
                     <div className="col-12 col-sm-auto">

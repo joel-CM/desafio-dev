@@ -5,14 +5,15 @@ import CharacterContext from "./characterContext";
 function CharacterStateProvider({ children }) {
     const initialState = {
         characters: [],
-        searchByName: "",
+        totalPages: 0,
         loadingCharacters: false,
         selectedCharacter: {},
         filters: {
+            name: "",
             status: "",
             specie: "",
-            gender: ""
-
+            gender: "",
+            page: 1
         }
     }
 

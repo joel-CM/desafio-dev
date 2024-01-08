@@ -11,7 +11,7 @@ export default function ResetFilters() {
     }
 
     return (
-        <Button onClick={handleResetFilters}>
+        <Button className="mt-3 mt-sm-none" onClick={handleResetFilters}>
             Reset Filters
         </Button>
     )

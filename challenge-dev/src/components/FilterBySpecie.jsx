@@ -11,7 +11,7 @@ export default function FilterBySpecie() {
     const handleFilter = (e) => {
         const specie = e.target.value;
         if (specie !== "") {
-            const data = { variables: { ...state.filters, specie } }
+            const data = { variables: { ...state.filters, specie, page: 1 } }
             filterCharacters(dispatch, data)
         }
     }

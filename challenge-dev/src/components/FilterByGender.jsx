@@ -9,7 +9,7 @@ export default function FilterByGender() {
     const handleFilter = (e) => {
         const gender = e.target.value;
         if (gender !== "") {
-            const data = { variables: { ...state.filters, gender } }
+            const data = { variables: { ...state.filters, gender, page: 1 } }
             filterCharacters(dispatch, data)
         }
     }

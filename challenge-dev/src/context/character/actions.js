@@ -20,29 +20,16 @@ export const getAllCharacters = async (dispatch) => {
         payload: data.characters.results
     })
 
+    // set characters total
+    dispatch({
+        type: types.SET_TOTAL_PAGES,
+        payload: data.characters.info.pages
+    })
+
     // set loadingCharacters to false
     dispatch({
         type: types.SET_LOADING_CHARACTERS_TYPE,
         payload: false
-    })
-}
-
-
-export const getCharacterByName = async (dispatch, data) => {
-    // set the searched character in the context
-    dispatch({
-        type: types.SET_SEARCH_BY_NAME,
-        payload: data.variables.name
-    })
-
-    const { data: d } = await client.query({
-        query: querys.GET_CHARACTER_BY_NAME_QUERY,
-        variables: data.variables
-    })
-
-    dispatch({
-        type: types.GET_CHARACTERS_BY_NAME_TYPE,
-        payload: d.characters.results
     })
 }
 
@@ -65,6 +52,12 @@ export const filterCharacters = async (dispatch, data) => {
         variables: data.variables
     })
 
+    // set new total pages
+    dispatch({
+        type: types.SET_TOTAL_PAGES,
+        payload: d.characters.info.pages
+    })
+
     // set filtered characters to context
     dispatch({
         type: types.FILTER_CHARACTERS_TYPE,
@@ -83,11 +76,12 @@ export const resetAllFilters = async (dispatch) => {
     dispatch({
         type: types.RESET_ALL_FILTERS_TYPE,
         payload: {
-            searchByName: "",
             filters: {
+                name: "",
                 status: "",
                 specie: "",
-                gender: ""
+                gender: "",
+                page: 1
             }
         }
     })
